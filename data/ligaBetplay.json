@@ -1,0 +1,54 @@
+{
+    "Once": {
+        "Nombre Equipo": "Once",
+        "Tecnicos": {
+            "Omar": {
+                "Nombre": "Omar",
+                "Cargo": "Director"
+            }
+        },
+        "Jugadores": {
+            "Julian": {
+                "Jugadores": "Julian",
+                "Posici\u00f3n Jugador": "delantero",
+                "Dorsal Jugador": 1,
+                "Tarjeta Amarilla": 2,
+                "Tarjeta Roja": 0,
+                "Goles Anotados": 6,
+                "Faltas Cometidas": 0
+            }
+        },
+        "Partidos": {
+            "09/09/2019": {
+                "Equipo Local": "Once",
+                "Equipo Visitante": "Decimo",
+                "Fecha programada": "09/09/2019",
+                "Goles Equipo Local": 2,
+                "Goles Equipo Visitante": 0
+            }
+        }
+    },
+    "Decimo": {
+        "Nombre Equipo": "Decimo",
+        "Jugadores": {
+            "Camilo": {
+                "Jugadores": "Camilo",
+                "Posici\u00f3n Jugador": "delantero",
+                "Dorsal Jugador": 2,
+                "Tarjeta Amarilla": 0,
+                "Tarjeta Roja": 0,
+                "Goles Anotados": 1,
+                "Faltas Cometidas": 1
+            }
+        },
+        "Partidos": {
+            "08/08/2018": {
+                "Equipo Local": "Decimo",
+                "Equipo Visitante": "Once",
+                "Fecha programada": "08/08/2018",
+                "Goles Equipo Local": 1,
+                "Goles Equipo Visitante": 2
+            }
+        }
+    }
+}
