@@ -1,7 +1,7 @@
 '''
 Funcion para implementar en el proyecto Liga Betplay 
 se mostrarán las estadísticas del torneo. 
-By Mariana Vargas
+By Mariana Vargas Esto es una prueba
 '''
 import os
 import json
