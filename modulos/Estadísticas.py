@@ -51,17 +51,18 @@ def estadisticaEquipo (LIGA_BASE:str):
     minGoles = totalGoles[equipoMinGoles]
     print (f'El equipo con menos goles es {equipoMinGoles} con {minGoles} goles')
 
-def estadisticasjugador (lIGA_BASE:str):
+def estadisticasjugador (LIGA_BASE:str):
     ligaBetplay = cargarLigaJson(LIGA_BASE)
     faltasPorJugador = {}
 
     for equipo, datosEquipo in ligaBetplay.items():
         if ('Jugadores' in datosEquipo) and isinstance(datosEquipo['Jugadores'],dict):
             for nomJugador, jugador in datosEquipo['Jugadores'].items():
-                numFaltas = jugador.get ('Faltas Cometidas', 0)
-                if (nomJugador not in faltasPorJugador):
-                    faltasPorJugador[nomJugador] = 0
-                faltasPorJugador[nomJugador] += numFaltas
+                if isinstance (jugador,dict):
+                    numFaltas = jugador.get ('Faltas Cometidas', 0)
+                    if (nomJugador not in faltasPorJugador):
+                        faltasPorJugador[nomJugador] = 0
+                    faltasPorJugador[nomJugador] += numFaltas
  
     print ("   FALTAS POR JUGADOR    ")
     for nomJugador, numFaltas in faltasPorJugador.items():
@@ -74,6 +75,30 @@ def estadisticasjugador (lIGA_BASE:str):
         print (f'El jugador con más faltas es {jugadorMasFaltas} con {faltasCometidas} faltas')
     else: 
         print ("No se han registrado faltas en el torneo")
+
+    tarAmarillasPorJugador = {}
+
+    for equipo, datosEquipo in ligaBetplay.items():
+        if ('Jugadores' in datosEquipo) and isinstance(datosEquipo['Jugadores'],dict):
+            for nomJugador, jugador in datosEquipo['Jugadores'].items():
+                if isinstance (jugador,dict):
+                    tarAmarilla = jugador.get ('Tarjeta Amarilla', 0)
+                    if (nomJugador not in tarAmarillasPorJugador):
+                        tarAmarillasPorJugador[nomJugador] = 0
+                    tarAmarillasPorJugador[nomJugador] += tarAmarilla
+ 
+    print ("   TARJETAS AMARILLAS POR JUGADOR    ")
+    for nomJugador, tarAmarilla in tarAmarillasPorJugador.items():
+        print (f'{nomJugador}: {tarAmarilla}')
+        
+    if (tarAmarillasPorJugador):
+        jugadorMasAmarillas = max(tarAmarillasPorJugador, key=tarAmarillasPorJugador.get)
+        tarAmarillaObtenidas = tarAmarillasPorJugador[jugadorMasAmarillas]
+        print (f'El jugador con más tajetas amarillas es {jugadorMasAmarillas} con {tarAmarillaObtenidas}.')
+    else: 
+        print ("No se han registrado tarjetas amarillas en el torneo")
+    guardarLiga(ligaBetplay,LIGA_BASE)
+
 
   
 

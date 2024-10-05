@@ -1,53 +1,135 @@
 {
-    "Once": {
-        "Nombre Equipo": "Once",
+    "Cali": {
+        "Nombre Equipo": "Cali",
+        "Jugadores": {
+            "Nombre Jugadores": "",
+            "Posici\u00f3n Jugador": "",
+            "Dorsal Jugador": 0,
+            "Tarjeta Amarilla": 0,
+            "Tarjeta Roja": 0,
+            "Goles Anotados": 0,
+            "Faltas Cometidas": 0,
+            "Alejandro": {
+                "Jugadores": "Alejandro",
+                "Posici\u00f3n Jugador": "Delantero",
+                "Dorsal Jugador": 1,
+                "Tarjeta Amarilla": 1,
+                "Tarjeta Roja": 0,
+                "Goles Anotados": 1,
+                "Faltas Cometidas": 0
+            },
+            "Pedro": {
+                "Jugadores": "Pedro",
+                "Posici\u00f3n Jugador": "Portero",
+                "Dorsal Jugador": 2,
+                "Tarjeta Amarilla": 0,
+                "Tarjeta Roja": 0,
+                "Goles Anotados": 0,
+                "Faltas Cometidas": 0
+            },
+            "Santiago": {
+                "Jugadores": "Santiago",
+                "Posici\u00f3n Jugador": "Defensa",
+                "Dorsal Jugador": 3,
+                "Tarjeta Amarilla": 0,
+                "Tarjeta Roja": 0,
+                "Goles Anotados": 2,
+                "Faltas Cometidas": 1
+            }
+        },
+        "T\u00e9cnicos": {
+            "Nombre": "",
+            "Cargo": ""
+        },
+        "Partido": {
+            "Fecha Partido": "",
+            "Equipo Local": "",
+            "Equipo Visitante": "",
+            "Goles Equipo Local": 0,
+            "Goleadores Equipo Local": "",
+            "Goles Equipo Visitante": 0,
+            "Goleadores Equipo Visitante": ""
+        },
         "Tecnicos": {
             "Omar": {
                 "Nombre": "Omar",
                 "Cargo": "Director"
             }
         },
-        "Jugadores": {
-            "Julian": {
-                "Jugadores": "Julian",
-                "Posici\u00f3n Jugador": "delantero",
-                "Dorsal Jugador": 1,
-                "Tarjeta Amarilla": 2,
-                "Tarjeta Roja": 0,
-                "Goles Anotados": 6,
-                "Faltas Cometidas": 0
-            }
-        },
         "Partidos": {
-            "09/09/2019": {
-                "Equipo Local": "Once",
-                "Equipo Visitante": "Decimo",
-                "Fecha programada": "09/09/2019",
+            "09/09/2024": {
+                "Equipo Local": "Cali",
+                "Equipo Visitante": "Bucaramanga",
+                "Fecha programada": "09/09/2024",
                 "Goles Equipo Local": 2,
-                "Goles Equipo Visitante": 0
+                "Goles Equipo Visitante": 1
             }
         }
     },
-    "Decimo": {
-        "Nombre Equipo": "Decimo",
+    "Bucaramanga": {
+        "Nombre Equipo": "Bucaramanga",
         "Jugadores": {
-            "Camilo": {
-                "Jugadores": "Camilo",
-                "Posici\u00f3n Jugador": "delantero",
-                "Dorsal Jugador": 2,
-                "Tarjeta Amarilla": 0,
+            "Nombre Jugadores": "",
+            "Posici\u00f3n Jugador": "",
+            "Dorsal Jugador": 0,
+            "Tarjeta Amarilla": 0,
+            "Tarjeta Roja": 0,
+            "Goles Anotados": 0,
+            "Faltas Cometidas": 0,
+            "Juan": {
+                "Jugadores": "Juan",
+                "Posici\u00f3n Jugador": "Volante",
+                "Dorsal Jugador": 5,
+                "Tarjeta Amarilla": 1,
+                "Tarjeta Roja": 0,
+                "Goles Anotados": 0,
+                "Faltas Cometidas": 0
+            },
+            "Jos\u00e9": {
+                "Jugadores": "Jos\u00e9",
+                "Posici\u00f3n Jugador": "Delantero",
+                "Dorsal Jugador": 4,
+                "Tarjeta Amarilla": 1,
                 "Tarjeta Roja": 0,
                 "Goles Anotados": 1,
+                "Faltas Cometidas": 0
+            },
+            "Andres": {
+                "Jugadores": "Andres",
+                "Posici\u00f3n Jugador": "Defensa",
+                "Dorsal Jugador": 6,
+                "Tarjeta Amarilla": 0,
+                "Tarjeta Roja": 0,
+                "Goles Anotados": 3,
                 "Faltas Cometidas": 1
             }
         },
+        "T\u00e9cnicos": {
+            "Nombre": "",
+            "Cargo": ""
+        },
+        "Partido": {
+            "Fecha Partido": "",
+            "Equipo Local": "",
+            "Equipo Visitante": "",
+            "Goles Equipo Local": 0,
+            "Goleadores Equipo Local": "",
+            "Goles Equipo Visitante": 0,
+            "Goleadores Equipo Visitante": ""
+        },
+        "Tecnicos": {
+            "Viviana": {
+                "Nombre": "Viviana",
+                "Cargo": "Fisioterapeuta"
+            }
+        },
         "Partidos": {
-            "08/08/2018": {
-                "Equipo Local": "Decimo",
-                "Equipo Visitante": "Once",
-                "Fecha programada": "08/08/2018",
-                "Goles Equipo Local": 1,
-                "Goles Equipo Visitante": 2
+            "09/10/2024": {
+                "Equipo Local": "Bucaramanga",
+                "Equipo Visitante": "Cali",
+                "Fecha programada": "09/10/2024",
+                "Goles Equipo Local": 3,
+                "Goles Equipo Visitante": 1
             }
         }
     }
