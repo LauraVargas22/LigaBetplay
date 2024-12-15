@@ -7,6 +7,7 @@ import os
 import json
 import modulos.ProgramarPartidos as pp
 
+#Implementación archivos JSON
 def cargarLigaJson (LIGA_BASE:str) -> dict:
     if os.path.isfile(LIGA_BASE):
         with open(LIGA_BASE,'r') as f:
@@ -18,6 +19,7 @@ def guardarLiga (ligaBetplay:dict, LIGA_BASE:str):
     with open(LIGA_BASE,'w') as f:
         json.dump(ligaBetplay,f,indent=4)
 
+#Función para registrar resultados
 def registrarresultados (LIGA_BASE):
     ligaBetplay = cargarLigaJson(LIGA_BASE)
     partidos = pp.mostrarPartidos (LIGA_BASE)

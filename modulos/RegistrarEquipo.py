@@ -14,7 +14,8 @@ def cargarLigaJson (LIGA_BASE:str) -> dict:
 def guardarLiga (ligaBetplay:dict, LIGA_BASE: str):
     with open(LIGA_BASE,'w') as f:
         json.dump(ligaBetplay,f,indent=4)
-    
+
+#Función para añadir equipo
 def addEquipo (LIGA_BASE: str):
     ligaBetplay = cargarLigaJson(LIGA_BASE)
 
@@ -22,6 +23,7 @@ def addEquipo (LIGA_BASE: str):
     while (isAddEquipo):
         os.system ('cls')
         nomEquipo = input('Ingrese el nombre del equipo a registrar\n').capitalize()
+        #Validar nombre del equipo en caso de que ya se encuentre registrado
         if nomEquipo in ligaBetplay:
             print ("El equipo ya se encuentra registrado")
             os.system('pause')
@@ -56,11 +58,13 @@ def addEquipo (LIGA_BASE: str):
             guardarLiga(ligaBetplay,LIGA_BASE)
             isAddEquipo = s.validateAnswer('¿Desea agregar otro equipo S(Si) N(No)?')
 
+#Función para mostrar equipos registrados
 def equiposRegistrados (LIGA_BASE:str):
     ligaBetplay = cargarLigaJson(LIGA_BASE)
     for nomEquipo in ligaBetplay.keys():
         print (nomEquipo)
 
+#Función para eliminar equipo registrado
 def removeEquipo (LIGA_BASE: str):
     print ("EQUIPOS REGISTRADOS")
     ligaBetplay = cargarLigaJson(LIGA_BASE)

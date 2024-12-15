@@ -10,24 +10,27 @@ import modulos.mensajes as m
 import modulos.RegistrarEquipo as re
 LIGA_BASE = None
 
+#Implementación del archivo JSON
 def cargarLigaJson (LIGA_BASE:str) -> dict:
     if os.path.isfile(LIGA_BASE):
         with open(LIGA_BASE,'r') as f:
             return json.load(f)
     else:
         return{}
-    
+ 
 def guardarLiga (ligaBetplay:dict, LIGA_BASE:json):
     with open(LIGA_BASE,'w') as f:
         json.dump(ligaBetplay,f,indent=4)
 
+#Función para la selección del equipo en el cual se van a registrar los jugadores
 def addPlantel (LIGA_BASE:str):
     ligaBetplay = cargarLigaJson(LIGA_BASE)
     nomEquipo = input ('Ingrese el nombre del equipo a buscar: ').capitalize()
     if (len(ligaBetplay)> 0):
         for equipo in ligaBetplay:
+        #Validar que el equipo se encuentre registrado
             if (nomEquipo in equipo):
-                addJugador (LIGA_BASE,nomEquipo)
+                addJugador (LIGA_BASE,nomEquipo) #Llamar función para registrar jugadores
                 break
         else:
             print (m.msgEquipo)
@@ -37,6 +40,7 @@ def addPlantel (LIGA_BASE:str):
         print (m.msgAdvice)
         os.system ('pause')
 
+#Función para añadir jugadores
 def addJugador (LIGA_BASE: str,nomEquipo:str):
     ligaBetplay = cargarLigaJson(LIGA_BASE)
     isAddJugador = True
@@ -45,7 +49,7 @@ def addJugador (LIGA_BASE: str,nomEquipo:str):
         nomJugador = input ('Ingrese el nombre del jugador a registrar\n').capitalize()
         if 'Jugadores' not in ligaBetplay[nomEquipo]:
             ligaBetplay[nomEquipo]['Jugadores'] = {}
-            
+        #Validar que el jugador no se encuentre registrado 
         if (nomJugador in ligaBetplay[nomEquipo]['Jugadores']):
             print ("El jugador ya se encuentra registrado")
             os.system('pause')
@@ -67,6 +71,7 @@ def addJugador (LIGA_BASE: str,nomEquipo:str):
             print (f'El jugador {nomJugador} se ha registrado al equipo {nomEquipo}')
             isAddJugador = s.validateAnswer ('¿Desea registrar otro jugador a este equipo S(Si) N(No)?')
 
+#Función para mostrar jugadores registrados
 def jugadoresRegistrados (LIGA_BASE:str):
     print("JUGADORES REGISTRADOS:")
     ligaBetplay = cargarLigaJson(LIGA_BASE)
@@ -86,6 +91,7 @@ def jugadoresRegistrados (LIGA_BASE:str):
         else:
             print ("El equipo no tiene jugadores registrados")
 
+#Función para eliminar jugadores
 def removeJugadores (LIGA_BASE:str):
     os.system ('cls')
     print ("EQUIPOS REGISTRADOS")

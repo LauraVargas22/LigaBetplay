@@ -10,6 +10,7 @@ import modulos.salir as s
 import modulos.RegistrarEquipo as re
 LIGA_BASE = None
 
+#Implementación archivo JSON
 def cargarLigaJson (LIGA_BASE:str) -> dict:
     if os.path.isfile(LIGA_BASE):
         with open(LIGA_BASE,'r') as f:
@@ -21,13 +22,13 @@ def guardarLiga (ligaBetplay:dict, LIGA_BASE:json):
     with open(LIGA_BASE,'w') as f:
         json.dump(ligaBetplay,f,indent=4)
 
-
+#Función validar nombre del equipo al cual se va añadir miembros
 def addPlantelCT (LIGA_BASE:str):
     ligaBetplay = cargarLigaJson(LIGA_BASE)
-    nomEquipo = input ('Ingrese el nombre del equipo a buscar: ').capitalize()
+    nomEquipo = input ('Ingrese el nombre del equipo a buscar: ').capitalize() #Nombre del equipo
     if (len(ligaBetplay)> 0):
         for equipo in ligaBetplay:
-            if (nomEquipo in equipo):
+            if (nomEquipo in equipo): #Si está el equipo añadir miembros
                 addCuerpoTecnico (LIGA_BASE,nomEquipo)
                 break
         else:
@@ -38,6 +39,7 @@ def addPlantelCT (LIGA_BASE:str):
         print (m.msgAdvice)
         os.system ('pause')
 
+#Función para añadir miembros del cuerpo técnico
 def addCuerpoTecnico (LIGA_BASE:str,nomEquipo:str):
     ligaBetplay = cargarLigaJson(LIGA_BASE)
     isaddCT = True
@@ -63,6 +65,7 @@ def addCuerpoTecnico (LIGA_BASE:str,nomEquipo:str):
 
             isaddCT = s.validateAnswer('¿Desea agregar otro integrante S(Si) N(No)?')
 
+#Función para mostrar cuerpo técnico resgistrado
 def mostrarCT (LIGA_BASE:str):
     print("CUERPO TÉCNICO REGISTRADOS:")
     ligaBetplay = cargarLigaJson(LIGA_BASE)
@@ -79,6 +82,7 @@ def mostrarCT (LIGA_BASE:str):
         else:
             print ("El equipo no tiene cuerpo técnico registrado")
 
+#Función para eliminar miembros del cuerpo técnico
 def removeCT (LIGA_BASE):
     os.system ('cls')
     print ("EQUIPOS REGISTRADOS")
